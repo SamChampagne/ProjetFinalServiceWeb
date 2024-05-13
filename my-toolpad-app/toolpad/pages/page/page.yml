@@ -1,0 +1,880 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mui/mui-toolpad/v0.1.54/docs/schemas/v1/definitions.json#properties/Page
+
+apiVersion: v1
+kind: page
+spec:
+  title: Default page
+  alias:
+    - YvqOkPt
+  content:
+    - component: Text
+      name: text3
+      layout:
+        horizontalAlign: center
+      props:
+        value: ToolPad API Final
+        variant: h6
+    - component: Text
+      name: text19
+      props:
+        value: Afficher toute les tâches, sauf les compléter
+        variant: h6
+    - component: DataGrid
+      name: dataGrid2
+      props:
+        rows:
+          $$jsExpression: afficherall1.data.taches
+        columns:
+          - field: id
+            type: number
+          - field: titre
+            type: string
+          - field: description
+            type: string
+          - field: date_de_debut
+            type: dateTime
+          - field: date_de_fin
+            type: dateTime
+          - field: complete
+            type: boolean
+          - field: utilisateur_id
+            type: number
+    - component: Button
+      name: button5
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: afficherall1.call()
+    - component: Spacer
+      name: spacer6
+    - component: Text
+      name: text18
+      props:
+        value: "Afficher toute les tâches "
+        variant: h6
+    - component: DataGrid
+      name: dataGrid1
+      props:
+        rows:
+          $$jsExpression: afficherall0.data.taches
+        columns:
+          - field: id
+            type: number
+          - field: titre
+            type: string
+          - field: description
+            type: string
+          - field: date_de_debut
+            type: dateTime
+          - field: date_de_fin
+            type: dateTime
+          - field: complete
+            type: boolean
+          - field: utilisateur_id
+            type: number
+    - component: Button
+      name: button6
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: afficherall0.call()
+    - component: Spacer
+      name: spacer5
+    - component: Text
+      name: text
+      props:
+        value: Afficher une tache à partir du id
+        variant: h6
+    - component: DataGrid
+      name: dataGrid
+      props:
+        rows:
+          $$jsExpression: afficherid.data.taches
+        columns:
+          - field: tache_titre
+            type: string
+          - field: tache_description
+            type: string
+          - field: date_de_debut
+            type: dateTime
+          - field: date_de_fin
+            type: dateTime
+          - field: sous_tache_titre
+            type: string
+          - field: sous_tache_complete
+            type: boolean
+    - component: PageRow
+      name: pageRow
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text11
+          layout:
+            columnSize: 0.48625501853060776
+          props:
+            value: ID
+        - component: TextField
+          name: textField
+          layout:
+            columnSize: 0.7404201688140145
+        - component: Button
+          name: button
+          layout:
+            columnSize: 1.7733248126553773
+          props:
+            content: Afficher
+            onClick:
+              $$jsExpressionAction: afficherid.call()
+    - component: Spacer
+      name: spacer4
+    - component: Text
+      name: text1
+      props:
+        value: Ajouter une tâche
+        variant: h6
+    - component: PageRow
+      name: pageRow1
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text2
+          layout:
+            columnSize: 0.32026769109645997
+          props:
+            value: titre
+        - component: TextField
+          name: textField1
+          layout:
+            columnSize: 1.67973230890354
+    - component: PageRow
+      name: pageRow2
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text4
+          layout:
+            columnSize: 0.32026769109645997
+          props:
+            value: description
+        - component: TextField
+          name: textField2
+          layout:
+            columnSize: 1.67973230890354
+    - component: PageRow
+      name: pageRow3
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text5
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: date de début
+        - component: TextField
+          name: textField3
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow4
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text6
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: date de fin
+        - component: TextField
+          name: textField4
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow5
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text7
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: complete
+        - component: TextField
+          name: textField5
+          layout:
+            columnSize: 1.6789883363779168
+    - component: Button
+      name: button1
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: ajoutertache.call()
+    - component: Spacer
+      name: spacer3
+    - component: Text
+      name: text8
+      props:
+        value: Supprimer une tâche
+        variant: h6
+    - component: PageRow
+      name: pageRow6
+      props:
+        justifyContent: start
+      children:
+        - component: PageColumn
+          name: pageColumn
+          layout:
+            columnSize: 0.4912451216034909
+          children:
+            - component: Text
+              name: text9
+              layout:
+                columnSize: 1
+              props:
+                value: ID
+            - component: Button
+              name: button2
+              props:
+                content: Éxécuter
+                onClick:
+                  $$jsExpressionAction: supprimertache.call()
+            - component: Spacer
+              name: spacer2
+            - component: Text
+              name: text10
+              props:
+                value: Modifier de tâches
+                variant: h6
+        - component: TextField
+          name: textField6
+          layout:
+            columnSize: 1.508754878396509
+    - component: PageRow
+      name: pageRow7
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text12
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: titre
+        - component: TextField
+          name: textField7
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow8
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text13
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: description
+        - component: TextField
+          name: textField8
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow9
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text14
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: date de début
+        - component: TextField
+          name: textField9
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow21
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text33
+          props:
+            value: date de fin
+          layout:
+            columnSize: 0.32101166362208317
+        - component: TextField
+          name: textField21
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow10
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text15
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: id de la tâches
+        - component: TextField
+          name: textField10
+          layout:
+            columnSize: 1.6789883363779168
+    - component: Button
+      name: button3
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: modifiertache.call()
+    - component: Spacer
+      name: spacer1
+    - component: Text
+      name: text16
+      props:
+        value: Changer statut de tâches
+        variant: h6
+    - component: PageRow
+      name: pageRow11
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text17
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: ID
+        - component: TextField
+          name: textField11
+          layout:
+            columnSize: 0.9835626488078754
+        - component: Text
+          name: text34
+          layout:
+            columnSize: 0.6547743236022081
+          props:
+            value: statut
+        - component: TextField
+          name: textField22
+          layout:
+            columnSize: 2.040651363967833
+    - component: Button
+      name: button4
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: changerstatuttache.call()
+    - component: Spacer
+      name: spacer
+    - component: Text
+      name: text20
+      props:
+        value: Ajouter une sous tâches
+        variant: h6
+    - component: PageRow
+      name: pageRow12
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text21
+          layout:
+            columnSize: 0.3210117007300321
+          props:
+            value: titre
+        - component: TextField
+          name: textField12
+          layout:
+            columnSize: 1.6789882992699678
+    - component: PageRow
+      name: pageRow13
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text22
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: compléter
+        - component: TextField
+          name: textField13
+          layout:
+            columnSize: 1.6789883363779168
+    - component: PageRow
+      name: pageRow14
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text23
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: id de la tâche
+        - component: TextField
+          name: textField14
+          layout:
+            columnSize: 1.6789883363779168
+    - component: Button
+      name: button7
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: ajoutersoustache.call()
+    - component: Spacer
+      name: spacer7
+    - component: Text
+      name: text24
+      props:
+        value: Supprimer une sous tâches
+        variant: h6
+    - component: PageRow
+      name: pageRow15
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text25
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: Id
+        - component: TextField
+          name: textField15
+          layout:
+            columnSize: 1.6789883363779168
+    - component: Button
+      name: button8
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: supprimersoustache.call()
+    - component: Spacer
+      name: spacer8
+    - component: Text
+      name: text26
+      props:
+        value: Modifier une sous tâches
+        variant: h6
+    - component: PageRow
+      name: pageRow16
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text27
+          layout:
+            columnSize: 0.4912451216034909
+          props:
+            value: titre
+        - component: TextField
+          name: textField16
+          layout:
+            columnSize: 1.508754878396509
+    - component: PageRow
+      name: pageRow18
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text29
+          layout:
+            columnSize: 0.4912451216034909
+          props:
+            value: id de la tâche
+        - component: TextField
+          name: textField18
+          layout:
+            columnSize: 1.508754878396509
+    - component: PageRow
+      name: pageRow19
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text30
+          layout:
+            columnSize: 0.4912451216034909
+          props:
+            value: id de la sous tâche à modifier
+        - component: TextField
+          name: textField19
+          layout:
+            columnSize: 1.508754878396509
+    - component: Button
+      name: button9
+      props:
+        content: Éxécuter
+        onClick:
+          $$jsExpressionAction: soustachemodifier.call()
+    - component: Spacer
+      name: spacer9
+    - component: Text
+      name: text31
+      props:
+        value: Modifier le statut d'une sous tâches
+        variant: h6
+    - component: PageRow
+      name: pageRow20
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text32
+          layout:
+            columnSize: 0.32101166362208317
+          props:
+            value: Id
+        - component: TextField
+          name: textField20
+          layout:
+            columnSize: 0.9835626488078754
+        - component: Text
+          name: text35
+          layout:
+            columnSize: 0.6547743236022081
+        - component: TextField
+          name: textField23
+          layout:
+            columnSize: 2.040651363967833
+    - component: Button
+      name: button10
+      props:
+        content: Éxécuter
+  queries:
+    - name: afficherall1
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "tache/afficherall/1"
+        headers:
+          [{ name: Authorization, value: { $$jsExpression: parameters.key } }]
+        method: GET
+        transformEnabled: false
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+    - name: afficherall0
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "tache/afficherall"
+        headers:
+          - name: Authorization
+            value:
+              $$jsExpression: parameters.key
+        method: GET
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+    - name: afficherid
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "tache/afficher/" + parameters.id
+        headers:
+          [{ name: Authorization, value: { $$jsExpression: parameters.key } }]
+        method: GET
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: id
+          value:
+            $$jsExpression: textField.value
+    - name: ajoutertache
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "tache/ajouter"
+        headers:
+          [{ name: authorization, value: { $$jsExpression: parameters.key } }]
+        method: POST
+        body:
+          kind: raw
+          content:
+            $$jsExpression: "const ajouterTache = {\r
+
+              titre: parameters.titre,\r
+
+              description: parameters.description,\r
+
+              date_de_debut: parameters.debut,\r
+
+              date_de_fin: parameters.fin,\r
+
+              complete: parameters.complete\r
+
+              }\r
+
+              JSON.stringify(ajouterTache)"
+          contentType: application/json
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: titre
+          value:
+            $$jsExpression: textField1.value
+        - name: description
+          value:
+            $$jsExpression: textField2.value
+        - name: debut
+          value:
+            $$jsExpression: textField3.value
+        - name: fin
+          value:
+            $$jsExpression: textField4.value
+        - name: complete
+          value:
+            $$jsExpression: textField5.value
+    - name: supprimertache
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "tache/supprimer/" + parameters.id
+        headers:
+          - name: authorization
+            value:
+              $$jsExpression: parameters.key
+        method: DELETE
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: id
+          value:
+            $$jsExpression: textField6.value
+    - name: modifiertache
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "tache/modifier/" + parameters.id
+        headers:
+          - name: authorization
+            value:
+              $$env: CLEAPI
+        method: PUT
+        body:
+          kind: raw
+          content:
+            $$jsExpression: "const tachemodifier = {\r
+
+              titre: parameters.titre,\r
+
+              description: parameters.description,\r
+
+              date_de_debut: parameters.debut,\r
+
+              date_de_fin: parameters.fin\r
+
+              }\r
+
+              JSON.stringify(tachemodifier)"
+          contentType: application/json
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: id
+          value:
+            $$jsExpression: textField10.value
+        - name: titre
+          value:
+            $$jsExpression: textField7.value
+        - name: description
+          value:
+            $$jsExpression: textField8.value
+        - name: debut
+          value:
+            $$jsExpression: textField9.value
+        - name: fin
+          value:
+            $$jsExpression: textField21.value
+    - name: changerstatuttache
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression:
+            parameters.host + "tache/changer/" + parameters.id + "/" +
+            parameters.statut
+        headers:
+          - name: authorization
+            value:
+              $$jsExpression: parameters.key
+        method: PUT
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: id
+          value:
+            $$jsExpression: textField11.value
+        - name: statut
+          value:
+            $$jsExpression: textField22.value
+    - name: supprimersoustache
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "soustache/supprimer/" + parameters.id
+        headers:
+          - name: authorization
+            value:
+              $$jsExpression: parameters.key
+        method: DELETE
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: id
+          value:
+            $$jsExpression: textField15.value
+    - name: ajoutersoustache
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "soustache/ajouter"
+        headers:
+          [{ name: authorization, value: { $$jsExpression: parameters.key } }]
+        method: POST
+        body:
+          kind: raw
+          content:
+            $$jsExpression: "const ajoutersoustache = {\r
+
+              \  tache_id: parameters.id_tache,\r
+
+              \  titre: parameters.titre,\r
+
+              \  complete: parameters.completer\r
+
+              }\r
+
+              JSON.stringify(ajoutersoustache)"
+          contentType: application/json
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: titre
+          value:
+            $$jsExpression: textField12.value
+        - name: completer
+          value:
+            $$jsExpression: textField13.value
+        - name: id_tache
+          value:
+            $$jsExpression: textField14.value
+    - name: soustachestatut
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression:
+            parameters.host + "soustache/changer/" + parameters.id + "/" +
+            parameters.statut
+        headers:
+          - name: authorization
+            value:
+              $$jsExpression: parameters.key
+        method: PUT
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: id
+          value:
+            $$jsExpression: textField20.value
+        - name: statut
+          value:
+            $$jsExpression: textField23.value
+    - name: soustachemodifier
+      mode: mutation
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "soustache/modifier/" + parameters.id
+        headers:
+          [{ name: authorization, value: { $$jsExpression: parameters.key } }]
+        method: PUT
+        body:
+          kind: raw
+          content:
+            $$jsExpression: "const modifiersoustache = {\r
+
+              titre: parameters.titre,\r
+
+              tache_id: parameters.id_tache\r
+
+              }\r
+
+              JSON.stringify(modifiersoustache)"
+          contentType: application/json
+      parameters:
+        - name: host
+          value:
+            $$env: APIHOST
+        - name: key
+          value:
+            $$env: CLEAPI
+        - name: titre
+          value:
+            $$jsExpression: textField16.value
+        - name: id_tache
+          value:
+            $$jsExpression: textField18.value
+        - name: id
+          value:
+            $$jsExpression: textField19.value

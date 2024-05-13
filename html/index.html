@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisation de l'API</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f5f5f5;">
+<div>
+    <div class="container" style="max-width: 400px; width: 100%; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+        <h1 style="text-align:center; margin-top:150px">Créer un utilisateur</h1>
+        <form id="formCreateUser" style="margin-bottom: 20px;">
+            <label for="nom" style="display: block; margin-bottom: 5px;">Nom:</label>
+            <input type="text" id="nom" name="nom" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <label for="prenom" style="display: block; margin-bottom: 5px;">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <label for="motdepasse" style="display: block; margin-bottom: 5px;">Mot de passe:</label>
+            <input type="password" id="motdepasse" name="motdepasse" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <input type="submit" value="Créer utilisateur" style="background-color: #007bff; color: #fff; cursor: pointer;border-radius:8px">
+        </form>
+    </div>
+
+    <div class="container" style="max-width: 400px; width: 100%; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+        <h1 style="text-align:center">Générer une nouvelle clé API</h1>
+        <form id="formGenerateApiKey" style="margin-bottom: 20px;">
+            <label for="emailApiKey" style="display: block; margin-bottom: 5px;">Email:</label>
+            <input type="email" id="emailApiKey" name="emailApiKey" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <label for="motdepasseApiKey" style="display: block; margin-bottom: 5px;">Mot de passe:</label>
+            <input type="password" id="motdepasseApiKey" name="motdepasseApiKey" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
+            <input type="submit" value="Générer clé API" style="background-color: #007bff; color: #fff; cursor: pointer;border-radius:8px">
+        </form>
+    </div>
+</div>
+<div class="container-result" style="padding:30px">
+    <div id="result" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 5px;" hidden="true">
+
+        
+
+    </div>
+</div>
+<script src="fetch.js"></script>
+</body>
