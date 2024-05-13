@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "c6009784-8887-483a-9442-4006e2f64766",
+		"name": "FinalApi",
+		"description": "Voci les 13 routes de mon projets final de Service Web.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27989180"
+	},
+	"item": [
+		{
+			"name": "/api/tache/afficherall/:statut?",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/tache/afficherall/0",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"tache",
+						"afficherall",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/utilisateur/ajouter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\":\"sam\",\r\n    \"prenom\":\"champagne\",\r\n    \"email\":\"awass@icloud.com\",\r\n    \"mot_de_passe\":\"dadada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/utilisateur/ajouter",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"utilisateur",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/utilisateur/token",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mot_de_passe\": \"dada\",\r\n    \"email\":\"samolichampagne@icloud.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/utilisateur/token",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"utilisateur",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tache/supprimer/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/tache/supprimer/2",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"tache",
+						"supprimer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tache/modifier/:id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"Événement important\",\r\n  \"description\": \"Réunion importante avec l'équipe de projet.\",\r\n  \"date_de_debut\": \"2024-04-25\",\r\n  \"date_de_fin\": \"2024-04-25\",\r\n  \"complete\": \"False\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/tache/modifier/1",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"tache",
+						"modifier",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tache/ajouter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"Faire les courses\",\r\n  \"description\": \"Acheter des fruits, des légumes et du lait.\",\r\n  \"date_de_debut\": \"2024-05-05\",\r\n  \"date_de_fin\": \"2024-05-05\",\r\n  \"complete\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/tache/ajouter",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"tache",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tache/afficher/:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/tache/afficher/3",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"tache",
+						"afficher",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tache/changer/:id/:nouveauStatut",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/tache/changer/1/0",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"tache",
+						"changer",
+						"1",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/soustache/supprimer/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/soustache/supprimer/1",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"soustache",
+						"supprimer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/soustache/ajouter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tache_id\": \"1\",\r\n  \"titre\": \"Sous-tâche 1\",\r\n  \"complete\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/soustache/ajouter",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"soustache",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/soustache/modifier",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n  \r\n  \"titre\": \"Nouveau titre de la sous-tâche\",\r\n  \"tache_id\": \"1\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/soustache/modifier/4",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"soustache",
+						"modifier",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/soustache/changer/:id/:nouveauStatut",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "63d2deff-87b5-4f52-8f84-aad6944f0e0b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apiservicewebprojetfinal.onrender.com/api/soustache/changer/1/0",
+					"protocol": "https",
+					"host": [
+						"apiservicewebprojetfinal",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"soustache",
+						"changer",
+						"1",
+						"0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
